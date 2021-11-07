@@ -1,2 +1,2 @@
 number = int(input('Введите число: '))
-print(number % 2 == 0)
+print(f'Число {number} чётное - ' + str(number % 2 == 0))
