@@ -54,7 +54,9 @@ def action(bill1, operation, bill2):
         units = [1] * max_len
         answer = bill1 ** (units / bill2)
     elif operation == 'lg':
-        answer = log(bill1, bill2)
+        answer = []
+        for i in range(max_len):
+            answer.append(log(bill1[i], bill2[i]))
     return answer
 
 
