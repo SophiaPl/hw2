@@ -3,13 +3,13 @@ class Sequence:
     def __init__(self, seq):
         self.samp = seq
         if isinstance(seq, str):
-            self.seq = seq
+            self.seq = seq.upper()
         elif isinstance(seq, list):
             if len(seq) >= 2:
                 self.name = seq[0]
-                self.seq = seq[1]
+                self.seq = seq[1].upper()
             else:
-                self.seq = seq[-1]
+                self.seq = seq[-1].upper()
 
     # возвращение названия последовательности
     def return_name(self):
