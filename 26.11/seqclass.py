@@ -162,13 +162,18 @@ if __name__ == '__main__':
     my_seq.remove('')
 
     if 'A' in my_seq[-1] and 'T' in my_seq[-1] and 'C' in my_seq[-1] and 'G' in my_seq[-1]:
-        samp = DNA(my_seq)
+        check = 0
+        for i in 'RNDQEHILKMFPSWYV':
+            if i in my_seq[-1]:
+                check += 1
+                break
+        if check == 0:
+            samp = DNA(my_seq)
+        elif check > 0:
+            samp = Protein(my_seq)
 
     elif 'A' in my_seq[-1] and 'U' in my_seq[-1] and 'C' in my_seq[-1] and 'G' in my_seq[-1]:
         samp = RNA(my_seq)
-
-    else:
-        samp = Protein(my_seq)
 
     print(type(samp))
     print(f'Название: {samp.return_name()}')
